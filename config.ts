@@ -7,7 +7,7 @@ filename = filename.replace(/\//g, "");
 export const defaultConfig: Config = {
   url: "https://drivingschool.wpmix.net/",
   match: "https://drivingschool.wpmix.net//**",
-  maxPagesToCrawl: 3,
+  maxPagesToCrawl: 50,
   outputFileName: filename+".json",
   resourceExclusions: ["jpg","png"]
 };
