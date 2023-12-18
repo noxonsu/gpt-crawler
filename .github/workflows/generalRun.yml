@@ -32,19 +32,15 @@ jobs:
       run: npm i
     - name: Configure crawler
       run: |
-        echo `import { Config } from "./src/config";
-        import dotenv from "dotenv";
+        echo '
         import { Config } from "./src/config";
-        
-        
-        dotenv.config();
         
         export const defaultConfig: Config = {
           url: "${{ github.event.inputs.URL }}",
           match: "${{ github.event.inputs.URL }}/${{ github.event.inputs.MATCH }}",
           maxPagesToCrawl: 50,
           outputFileName: "output.json",
-        };` > ./config.ts
+        };' > ./config.ts
       env:
         URL: ${{ github.event.inputs.URL }}
         MATCH: ${{ github.event.inputs.MATCH }}

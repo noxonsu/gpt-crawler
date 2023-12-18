@@ -1,8 +1,13 @@
 import { Config } from "./src/config";
-
-export const defaultConfig: Config = {
-  url: "https://www.builder.io/c/docs/developers",
-  match: "https://www.builder.io/c/docs/**",
-  maxPagesToCrawl: 50,
-  outputFileName: "output.json",
-};
+        import dotenv from "dotenv";
+        import { Config } from "./src/config";
+        
+        
+        dotenv.config();
+        
+        export const defaultConfig: Config = {
+          url: "${{ github.event.inputs.URL }}",
+          match: "${{ github.event.inputs.URL }}/${{ github.event.inputs.MATCH }}",
+          maxPagesToCrawl: 50,
+          outputFileName: "output.json",
+        };
