@@ -50,3 +50,12 @@ jobs:
         MATCH: ${{ github.event.inputs.MATCH }}
     - name: Run crawler
       run: npm start
+    - name: Prepare git
+      run: |
+        git config --global user.name "GitHub Action"
+        git config --global user.email "action@github.com"
+        git config pull.rebase false
+        git add -A
+        git diff --cached --exit-code || git commit -m "GitHub Actions ($GITHUB_WORKFLOW)"
+        git pull
+        git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git || true
