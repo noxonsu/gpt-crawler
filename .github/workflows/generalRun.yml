@@ -36,13 +36,13 @@ jobs:
         import { Config } from "./src/config";
         var filename = "${{ github.event.inputs.URL }}"; // Corrected variable name
         filename = filename.replace(/(^\w+:|^)\/\//, "");
-        filename = filename.replace(/\//g, "_");
+        filename = filename.replace(/\//g, "");
 
         export const defaultConfig: Config = {
           url: "${{ github.event.inputs.URL }}",
           match: "${{ github.event.inputs.URL }}/${{ github.event.inputs.MATCH }}",
-          maxPagesToCrawl: 50,
-          outputFileName: "data/"+filename+".json",
+          maxPagesToCrawl: 3,
+          outputFileName: filename+".json",
           resourceExclusions: ["jpg","png"]
         };' > ./config.ts
       env:
