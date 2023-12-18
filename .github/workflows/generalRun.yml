@@ -40,6 +40,7 @@ jobs:
           match: "${{ github.event.inputs.URL }}/${{ github.event.inputs.MATCH }}",
           maxPagesToCrawl: 50,
           outputFileName: "data/${{ github.event.inputs.URL }}.json",
+          resourceExclusions: ["jpg","png"]
         };' > ./config.ts
       env:
         URL: ${{ github.event.inputs.URL }}
