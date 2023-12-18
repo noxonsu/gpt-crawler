@@ -42,6 +42,7 @@ jobs:
           url: "${{ github.event.inputs.URL }}",
           match: "${{ github.event.inputs.URL }}/${{ github.event.inputs.MATCH }}",
           maxPagesToCrawl: 50,
+          maxTokens: 120000,
           outputFileName: filename+".json",
           resourceExclusions: ["jpg","png"]
         };' > ./config.ts
