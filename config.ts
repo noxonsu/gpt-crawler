@@ -8,6 +8,7 @@ export const defaultConfig: Config = {
   url: "https://drivingschool.wpmix.net/",
   match: "https://drivingschool.wpmix.net//**",
   maxPagesToCrawl: 50,
+  maxTokens: 120000,
   outputFileName: filename+".json",
   resourceExclusions: ["jpg","png"]
 };
