@@ -34,7 +34,7 @@ jobs:
       run: |
         echo '
         import { Config } from "./src/config";
-        var filenam = "${{ github.event.inputs.URL }}";
+        var filename = "${{ github.event.inputs.URL }}"; // Corrected variable name
         filename = filename.replace(/(^\w+:|^)\/\//, "");
         filename = filename.replace(/\//g, "_");
 
