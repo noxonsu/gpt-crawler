@@ -39,7 +39,7 @@ jobs:
           url: "${{ github.event.inputs.URL }}",
           match: "${{ github.event.inputs.URL }}/${{ github.event.inputs.MATCH }}",
           maxPagesToCrawl: 50,
-          outputFileName: "output.json",
+          outputFileName: "data/${{ github.event.inputs.URL }}.json",
         };' > ./config.ts
       env:
         URL: ${{ github.event.inputs.URL }}
