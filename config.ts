@@ -1,14 +1,14 @@
 
 import { Config } from "./src/config";
-var filename = "https://drivingschool.wpmix.net/"; // Corrected variable name
+var filename = "https://onout.org/"; // Corrected variable name
 filename = filename.replace(/(^\w+:|^)\/\//, "");
 filename = filename.replace(/\//g, "");
 
 export const defaultConfig: Config = {
-  url: "https://drivingschool.wpmix.net/",
-  match: "https://drivingschool.wpmix.net//**",
+  url: "https://onout.org/",
+  match: "https://onout.org//**",
   maxPagesToCrawl: 35,
-  maxTokens: 120000,
+  maxTokens: 100000,
   outputFileName: filename+".json",
   resourceExclusions: ["jpg","png"]
 };
